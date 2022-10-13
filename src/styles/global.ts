@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.colors['base-white']};
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -35,11 +36,11 @@ export const GlobalStyle = createGlobalStyle`
     width: 0.4rem;
   }
   ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors['base-button']}
+    background: ${({ theme }) => theme.colors['base-background']}
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 2rem;
-    background: ${({ theme }) => theme.colors['brand-primary']}
+    background: ${({ theme }) => theme.colors['base-background-dark']}
   }
 
 

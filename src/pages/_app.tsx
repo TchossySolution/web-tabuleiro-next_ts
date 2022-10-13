@@ -11,10 +11,10 @@ function MyApp({ Component, pageProps }: AppLayoutProps) {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <GlobalStyle />
     </ThemeProvider>
   )
 }

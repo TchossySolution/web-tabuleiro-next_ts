@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import RootTabuleiroLayout from '../Layout/RootTabuleiroLayout'
+import RootLayout from '../Layout/RootLayout'
+import { Container } from '../styles/pages/_intro/styles'
 
 function Home() {
   return (
@@ -24,10 +25,15 @@ function Home() {
           <a>Sub-Restaurant</a>
         </Link>
       </li>
+      <li>
+        <Link href="/furnisher">
+          <a>furnisher</a>
+        </Link>
+      </li>
     </ul>
   )
 }
 
-Home.layout = RootTabuleiroLayout
+Home.layout = RootLayout
 
 export default Home

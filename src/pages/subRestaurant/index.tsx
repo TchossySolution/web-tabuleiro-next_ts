@@ -1,13 +1,13 @@
-import RootRestaurantLayout from '../../Layout/RootRestaurantLayout'
+import RootLayout from '../../Layout/RootLayout'
 
-function subRestaurant() {
+function subRestaurantLogin() {
   return (
     <div>
-      <h1>Home SubRestaurant</h1>
+      <h1>Login subRestaurant</h1>
     </div>
   )
 }
 
-subRestaurant.layout = RootRestaurantLayout
+subRestaurantLogin.layout = RootLayout
 
-export default subRestaurant
+export default subRestaurantLogin

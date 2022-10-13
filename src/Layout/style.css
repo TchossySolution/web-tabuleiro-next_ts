@@ -1,0 +1,9 @@
+.RootTabuleiroContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+}
+
+.SBody {
+  background-color: red;
+}

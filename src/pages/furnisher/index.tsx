@@ -1,13 +1,13 @@
-import RootRestaurantLayout from '../../Layout/RootRestaurantLayout'
+import RootLayout from '../../Layout/RootLayout'
 
-function furnisher() {
+function furnisherLogin() {
   return (
     <div>
-      <h1>Home Furnisher</h1>
+      <h1>Login furnisher</h1>
     </div>
   )
 }
 
-furnisher.layout = RootRestaurantLayout
+furnisherLogin.layout = RootLayout
 
-export default furnisher
+export default furnisherLogin

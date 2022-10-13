@@ -1,13 +1,22 @@
-import RootTabuleiroLayout from '../../Layout/RootTabuleiroLayout'
+import Link from 'next/link'
+import RootLayout from '../../Layout/RootLayout'
+import { TabuleiroLoginContainer } from '../../styles/pages/_tabuleiro'
 
-function tabuleiroHome() {
+function tabuleiroLogin() {
   return (
-    <div>
-      <h1>Home Tabuleiro</h1>
-    </div>
+    <TabuleiroLoginContainer>
+      <h1>Login Tabuleiro</h1>
+      <ul>
+        <li>
+          <Link href="/tabuleiro/home">
+            <a>Logar</a>
+          </Link>
+        </li>
+      </ul>
+    </TabuleiroLoginContainer>
   )
 }
 
-tabuleiroHome.layout = RootTabuleiroLayout
+tabuleiroLogin.layout = RootLayout
 
-export default tabuleiroHome
+export default tabuleiroLogin
