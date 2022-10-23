@@ -6,8 +6,18 @@ import {
   ButtonAction,
   AddUser
 } from '../../styles/pages/_tabuleiro/users'
-import { AiFillEye, AiFillEdit, AiOutlinePlus } from 'react-icons/ai'
+
+import {
+  AiFillEye,
+  AiFillEdit,
+  AiOutlineMail,
+  AiOutlinePlus
+} from 'react-icons/ai'
 import { MdDelete } from 'react-icons/md'
+import { RiGenderlessLine } from 'react-icons/ri'
+import { ImListNumbered } from 'react-icons/im'
+import { FaRegUser } from 'react-icons/fa'
+import { BiPhoneCall, BiLocationPlus } from 'react-icons/bi'
 
 import useImage from '../../assets/logo.png'
 import swal from 'sweetalert'
@@ -88,6 +98,10 @@ function Users() {
   const listUsers = users.map((item, index) => (
     <>
       <tr key={index}>
+        <td>
+          <p># {item._id} </p>
+        </td>
+
         <td className="diplay">
           <img width={28} src={item.photo_profile} alt="" />
           <p>
@@ -136,72 +150,99 @@ function Users() {
     <UsersContainerStyle>
       {/* <HeaderPageName Title={'Users'} actionButtom={false} action={'Criar'} /> */}
 
-      <div className="header">
-        <h1>Cliente ativos</h1>
-      </div>
-
-      <AddUserContainer>
-        <AddUser onClick={openModalCreateUse}>
-          <AiOutlinePlus size={20} color="#fff" /> Criar usuário
-        </AddUser>
-
-        <div>
-          <InputForm
-            typeInput="text"
-            placeholder="Pesquisar por usuários"
-            inputValueChange={(e: any) => setSearch(e.target.value)}
-            icon={<BiSearchAlt size={20} color="#504F50" />}
-          />
+      <div className="separation">
+        <div className="header">
+          <h1>Cliente</h1>
         </div>
-      </AddUserContainer>
 
-      <div className="filterContainer">
-        <div className="controlFilter">
-          <button>
-            <FaSortAmountUp size={16} />
-            <label>Ordenar</label>
-          </button>
-          <button>
-            <FaFilter size={16} />
-            <label>Filtrar</label>
-          </button>
-        </div>
-      </div>
+        <AddUserContainer>
+          <AddUser onClick={openModalCreateUse}>
+            <AiOutlinePlus size={20} color="#fff" /> Criar usuário
+          </AddUser>
 
-      <div className="tableContainer">
-        <table>
-          <thead>
-            <tr>
-              <td>Usuário</td>
-              <td>Endereço</td>
-              <td>Telefone</td>
-              <td>Email</td>
-              <td>Genero</td>
-              <td className="diplaySpace">Ação</td>
-            </tr>
-          </thead>
-          <tbody>{listUsers}</tbody>
-        </table>
-
-        <div className="footerTable">
-          <div className="lineForPage">
-            <label htmlFor="linePage">Linha por página: </label>
-            <input
-              type="number"
-              min={8}
-              max={20}
-              value={lineForPage}
-              onChange={handleChange}
+          <div>
+            <InputForm
+              typeInput="text"
+              placeholder="Pesquisar por usuários"
+              inputValueChange={(e: any) => setSearch(e.target.value)}
+              icon={<BiSearchAlt size={20} color="#504F50" />}
             />
           </div>
+        </AddUserContainer>
+      </div>
 
-          <div className="controlPage">
-            <button>
-              <IoIosArrowBack size={20} />
-            </button>
-            <button>
-              <IoIosArrowForward size={20} />
-            </button>
+      <div className="separation">
+        <div className="filterContainer">
+          <div className="controlFilter">
+            <h1>Listagem de ativos</h1>
+
+            <div>
+              <button>
+                <FaSortAmountUp size={16} />
+                <label>Ordenar</label>
+              </button>
+              <button>
+                <FaFilter size={16} />
+                <label>Filtrar</label>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="tableContainer">
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <ImListNumbered /> Id
+                </td>
+                <td>
+                  <FaRegUser /> Usuário
+                </td>
+                <td>
+                  <div className="headTable">
+                    <BiLocationPlus size={'1.2rem'} /> Endereço
+                  </div>
+                </td>
+                <td>
+                  <div className="headTable">
+                    <BiPhoneCall size={'1.2rem'} /> Telefone
+                  </div>
+                </td>
+                <td>
+                  <div className="headTable">
+                    <AiOutlineMail size={'1.2rem'} /> Email
+                  </div>
+                </td>
+                <td>
+                  <RiGenderlessLine size={'1.2rem'} /> Genero
+                </td>
+                <td className="diplaySpace">Ação</td>
+              </tr>
+            </thead>
+            <tbody>{listUsers}</tbody>
+          </table>
+
+          <div className="footerTable">
+            <div className="lineForPage">
+              <label htmlFor="linePage">Linha por página: </label>
+              <input
+                type="number"
+                min={8}
+                max={20}
+                value={lineForPage}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="controlPage">
+              <button>
+                <IoIosArrowBack size={20} />
+              </button>
+              <button>
+                <IoIosArrowForward size={20} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

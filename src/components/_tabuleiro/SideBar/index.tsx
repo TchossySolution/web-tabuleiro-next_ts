@@ -16,22 +16,25 @@ import {
 } from 'react-icons/md'
 import { MdComment } from 'react-icons/md'
 import { IoAnalyticsSharp, IoRestaurantSharp } from 'react-icons/io5'
-import { AiFillSetting } from 'react-icons/ai'
+import { AiFillSetting, AiOutlineMessage } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
-import {
-  AiOutlineShopping,
-  AiOutlineUser,
-  AiOutlineMessage
-} from 'react-icons/ai'
 import { IoDocumentsOutline } from 'react-icons/io5'
-import { IoIosConstruct } from 'react-icons/io'
-import { MdCategory, MdOutlineBookmarks } from 'react-icons/md'
-import { RiCoupon3Line, RiUserSettingsFill } from 'react-icons/ri'
+import {
+  IoIosArrowBack,
+  IoIosArrowForward,
+  IoIosConstruct
+} from 'react-icons/io'
 import { routsNameTabuleiro } from '../../../data/routsName'
 import { FaUserFriends } from 'react-icons/fa'
+import { RiUserSettingsFill } from 'react-icons/ri'
 
 const SideBarTabuleiro = () => {
   const [slideIsOpen, setSlideIsOpen] = useState<boolean>(true)
+
+  function ToggleModal() {
+    setSlideIsOpen(!slideIsOpen)
+  }
+
   const dash = [
     {
       label: 'Dashboard',
@@ -84,12 +87,6 @@ const SideBarTabuleiro = () => {
       to: routsNameTabuleiro.messages,
       icon: <AiOutlineMessage size={18} />,
       notification: 0
-    },
-    {
-      label: 'FeedBacks',
-      icon: <MdComment size={18} />,
-      to: routsNameTabuleiro.feedback,
-      notification: 0
     }
   ]
   const secondaryArray = [
@@ -97,11 +94,6 @@ const SideBarTabuleiro = () => {
       label: 'Configurações',
       icon: <AiFillSetting size={18} />,
       to: '/config'
-    },
-    {
-      label: 'Terminar sessão',
-      to: '/logout',
-      icon: <FiLogOut size={18} />
     }
   ]
 
@@ -177,9 +169,26 @@ const SideBarTabuleiro = () => {
   ))
 
   return (
-    <SideBarContainer>
+    <SideBarContainer style={slideIsOpen ? {} : { width: 'auto' }}>
+      <div
+        className="containerMenu"
+        style={slideIsOpen ? {} : { left: 90, width: 40, height: 40 }}
+      >
+        <div onClick={ToggleModal}>
+          {slideIsOpen ? (
+            <IoIosArrowBack className="iconHeader" size={24} />
+          ) : (
+            <IoIosArrowForward className="iconHeader" size={24} />
+          )}
+        </div>
+      </div>
+
       <SLogo>
-        <img src="/logoText.png" alt="" />
+        <img
+          style={slideIsOpen ? {} : { width: '4.2rem' }}
+          src="/logoText.png"
+          alt=""
+        />
       </SLogo>
 
       <SLinkContainer>

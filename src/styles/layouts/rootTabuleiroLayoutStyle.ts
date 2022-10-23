@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const RootTabuleiroContainer = styled.section`
-  height: 100%;
   display: flex;
+  height: 100%;
   flex-direction: row;
   background-image: url('/BackgroundVinhoOpacity.png');
 

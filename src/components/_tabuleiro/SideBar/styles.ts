@@ -3,7 +3,6 @@ import { NavLink } from '../../NavLink'
 
 export const SideBarContainer = styled.div`
   width: 14rem;
-  min-width: 11rem;
   height: 100vh;
   top: 0;
   left: 0;
@@ -13,9 +12,34 @@ export const SideBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.colors['base-background-dark']};
+  z-index: 4;
+
+  border-right: 0.1rem solid
+    ${props => props.theme.colors['base-background-dark-black']};
 
   overflow-y: auto;
   overflow-x: hidden;
+
+  .containerMenu {
+    position: fixed;
+    top: 1.2rem;
+    left: 11rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 0.1rem solid ${props => props.theme.colors['base-white']};
+    border-radius: 100%;
+    background-color: ${props => props.theme.colors['base-background-dark']};
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 22;
+
+    .iconHeader {
+      color: ${props => props.theme.colors['base-title']};
+    }
+  }
 
   /* width */
   ::-webkit-scrollbar {
@@ -47,14 +71,13 @@ export const SideBarContainer = styled.div`
 
 export const SLogo = styled.div`
   width: 100%;
-  height: 6rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
-  margin-bottom: 6px;
+  margin: 1rem 0;
 
   img {
     max-width: 6rem;

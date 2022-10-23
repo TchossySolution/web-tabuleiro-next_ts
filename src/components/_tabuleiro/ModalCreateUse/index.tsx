@@ -14,7 +14,8 @@ type modalType = {
 
 const customStyles = {
   overlay: {
-    backgroundColor: '#00000069'
+    backgroundColor: '#00000069',
+    zIndex: 10
   },
   content: {
     width: '70%',

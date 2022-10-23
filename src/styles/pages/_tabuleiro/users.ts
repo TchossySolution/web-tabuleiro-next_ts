@@ -5,8 +5,14 @@ export const UsersContainerStyle = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.theme.colors['base-background-dark']};
-  padding: 1rem;
+  background-color: transparent;
+  gap: 2rem;
+
+  .separation {
+    padding: 1rem;
+    background-color: ${props => props.theme.colors['base-background-dark']};
+    border-radius: 0.4rem;
+  }
 
   .header {
     margin-bottom: 1rem;
@@ -22,20 +28,37 @@ export const UsersContainerStyle = styled.div`
     .controlFilter {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
       flex-direction: row;
+      margin-bottom: 2rem;
       gap: 1.2rem;
 
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: row;
+        gap: 1.2rem;
+      }
+
       button {
+        padding: 0.2rem 0.6rem;
         color: ${({ theme }) => theme.colors['base-white']};
         border: none;
         background: none;
+        border-radius: 0.2rem;
 
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
         gap: 0.4rem;
+
+        transition: 0.2s ease;
+
+        :active {
+          background: ${({ theme }) => theme.colors['brand-primary']};
+        }
 
         label {
           font-size: 0.9rem;
@@ -62,7 +85,27 @@ export const UsersContainerStyle = styled.div`
         border-bottom: 1px solid #dddddd;
       }
 
+      /* coluna header */
+      thead {
+        height: 2rem;
+
+        .headTable {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          gap: 0.3rem;
+        }
+      }
+
       /* coluna body */
+      tbody {
+        tr {
+          transition: 0.2s ease;
+          :hover {
+            background-color: #555;
+          }
+        }
+      }
       td {
         padding: 6px 14px 6px 16px;
       }
@@ -98,7 +141,7 @@ export const UsersContainerStyle = styled.div`
 
     .footerTable {
       width: 100%;
-      padding: 1.2rem;
+      padding: 1.8rem 1.2rem 1.2rem;
 
       display: flex;
       align-items: center;
@@ -138,6 +181,14 @@ export const UsersContainerStyle = styled.div`
           color: ${({ theme }) => theme.colors['base-white']};
           border: none;
           background: none;
+          border-radius: 0.2rem;
+
+          transition: 0.2s ease;
+
+          :active {
+            background: ${({ theme }) =>
+              theme.colors['base-background-dark-black']};
+          }
         }
       }
     }
@@ -179,8 +230,6 @@ export const UsersContainerStyle = styled.div`
 `
 export const AddUserContainer = styled.div`
   width: 100%;
-  padding: 1.4rem 0;
-  margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

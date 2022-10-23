@@ -4,6 +4,7 @@ export const defaultTheme = {
     'base-white': '#FFFFFF',
     'base-background': '#504F50',
     'base-background-dark': '#3A3A3A',
+    'base-background-dark-black': '#929292d2',
     'base-gray': '#dddddd',
     'base-text': '#EDEDED',
     'base-subtitle': '#F0F0F0',
