@@ -13,6 +13,7 @@ const RootTabuleiroLayout: LayoutProps = ({ children }) => {
       <Head>
         <title>Tabuleiro - Painel</title>
         <meta name="description" content="Painel para restaurantes" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <RootTabuleiroContainer>

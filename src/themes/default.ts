@@ -12,7 +12,7 @@ export const defaultTheme = {
     'base-error': '#f84747',
     'brand-primary-dark': '#B47507',
     'brand-primary': '#DC9D30',
-    'brand-primary-light': '#EBE5F9',
+    'brand-primary-light': '#f7c165',
     'brand-secundary-dark': '#200808',
     'brand-secundary': '#2D1414',
     'brand-secundary-light': '#F1E9C9',

@@ -40,10 +40,19 @@ export const HeaderContainer = styled.menu`
     align-items: center;
     gap: 1rem;
 
+    padding-left: 1.6rem;
+    border-left: 0.1rem solid #ddd;
+
     .circuleContainerIcons {
-      padding: 0.4rem;
+      padding: 0.5rem;
       border: none;
-      border-radius: 100%;
+      border-radius: 0.4rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #ddd;
     }
 
     .optionContainer {

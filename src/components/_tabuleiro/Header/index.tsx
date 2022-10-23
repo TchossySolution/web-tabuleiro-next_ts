@@ -10,10 +10,14 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Badge from '@mui/material/Badge'
 
-import { BsChatDots } from 'react-icons/bs'
+import { BsChatDots, BsChatText } from 'react-icons/bs'
 import { CgProfile } from 'react-icons/cg'
 import { FiLogOut } from 'react-icons/fi'
-import { IoMdNotificationsOutline } from 'react-icons/io'
+import {
+  IoChatboxEllipsesOutline,
+  IoNotificationsOutline
+} from 'react-icons/io5'
+import { RiFullscreenLine } from 'react-icons/ri'
 
 interface ISettings {
   name: string
@@ -51,6 +55,14 @@ function HeaderTabuleiro() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   )
+
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen()
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen()
+    }
+  }
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget)
   }
@@ -73,15 +85,29 @@ function HeaderTabuleiro() {
 
       <div className="containerRigth">
         <div className="containerInfUser">
+          <Tooltip title="Tela inteira">
+            <button
+              onClick={toggleFullScreen}
+              className="circuleContainerIcons"
+            >
+              <RiFullscreenLine color={'#000000'} size={'1.2rem'} />
+            </button>
+          </Tooltip>
+
           <button className="circuleContainerIcons">
-            <Badge badgeContent={2} color="error">
-              <BsChatDots color={'#000000'} size={'1.4rem'} />
-            </Badge>
+            <Tooltip title="Mensagens">
+              <Badge badgeContent={2} color="error">
+                <BsChatText color={'#000000'} size={'1.2rem'} />
+              </Badge>
+            </Tooltip>
           </button>
+
           <button className="circuleContainerIcons">
-            <Badge badgeContent={3} color="error">
-              <IoMdNotificationsOutline color={'#000000'} size={'1.4rem'} />
-            </Badge>
+            <Tooltip title="Notificações">
+              <Badge badgeContent={3} color="error">
+                <IoNotificationsOutline color={'#000000'} size={'1.2rem'} />
+              </Badge>
+            </Tooltip>
           </button>
 
           <div className="optionContainer">

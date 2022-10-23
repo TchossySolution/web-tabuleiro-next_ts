@@ -11,8 +11,9 @@ const RootSubRestaurantLayout: LayoutProps = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Tabuleiro - Restaurante</title>
+        <title>Tabuleiro - Sub-Restaurante</title>
         <meta name="description" content="Painel para restaurantes" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <RootSubRestaurantContainer>
