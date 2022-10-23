@@ -3,16 +3,16 @@ import { NavLink } from '../../NavLink'
 
 export const SideBarContainer = styled.div`
   width: 14rem;
-  min-width: 11rem;
   height: 100vh;
   top: 0;
   left: 0;
   position: sticky;
   bottom: 0;
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.colors['base-background-dark']};
+  margin-right: 1rem;
+  padding: 0.9rem;
 
   overflow-y: auto;
   overflow-x: hidden;
@@ -39,6 +39,14 @@ export const SideBarContainer = styled.div`
   h5 {
     color: ${props => props.theme.colors['base-text']};
   }
+  .container {
+    width: 95%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .title {
     color: ${props => props.theme.colors['base-title']};
@@ -48,11 +56,6 @@ export const SideBarContainer = styled.div`
 export const SLogo = styled.div`
   width: 100%;
   height: 6rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   cursor: pointer;
   margin-bottom: 6px;
 

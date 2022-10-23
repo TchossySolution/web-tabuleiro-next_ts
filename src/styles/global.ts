@@ -7,6 +7,14 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     outline: none;
   }
+
+  /* 
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    } 
+  */
+  
   body {
     background: ${({ theme }) => theme.colors['base-background']};
     color: ${({ theme }) => theme.colors['base-text']};

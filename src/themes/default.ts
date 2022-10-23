@@ -1,8 +1,10 @@
 export const defaultTheme = {
   colors: {
+    'base-black': '#111111',
     'base-white': '#FFFFFF',
     'base-background': '#504F50',
     'base-background-dark': '#3A3A3A',
+    'base-gray': '#dddddd',
     'base-text': '#EDEDED',
     'base-subtitle': '#F0F0F0',
     'base-title': '#F3F2F2',
@@ -35,5 +37,10 @@ export const defaultTheme = {
   fonts: {
     regular: "'Roboto'",
     title: "'Baloo 2'"
+  },
+  border: {
+    'border-s': '100%',
+    'border-e': '0.6rem',
+    'border-f': '0.4rem'
   }
 }

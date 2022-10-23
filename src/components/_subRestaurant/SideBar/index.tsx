@@ -9,13 +9,9 @@ import {
   SNotification
 } from './styles'
 
-import {
-  MdDeliveryDining,
-  MdOutlineDashboard,
-  MdVerifiedUser
-} from 'react-icons/md'
+import { MdOutlineDashboard } from 'react-icons/md'
 import { MdComment } from 'react-icons/md'
-import { IoAnalyticsSharp, IoRestaurantSharp } from 'react-icons/io5'
+import { IoAnalyticsSharp } from 'react-icons/io5'
 import { AiFillSetting } from 'react-icons/ai'
 import { FiLogOut } from 'react-icons/fi'
 import {
@@ -26,69 +22,79 @@ import {
 import { IoDocumentsOutline } from 'react-icons/io5'
 import { IoIosConstruct } from 'react-icons/io'
 import { MdCategory, MdOutlineBookmarks } from 'react-icons/md'
-import { RiCoupon3Line, RiUserSettingsFill } from 'react-icons/ri'
-import { routsNameTabuleiro } from '../../../data/routsName'
-import { FaUserFriends } from 'react-icons/fa'
+import { RiCoupon3Line } from 'react-icons/ri'
 
-const SideBarTabuleiro = () => {
+const SideBarSubRestaurant = () => {
   const [slideIsOpen, setSlideIsOpen] = useState<boolean>(true)
   const dash = [
     {
       label: 'Dashboard',
       icon: <MdOutlineDashboard size={18} />,
-      to: routsNameTabuleiro.home,
+      to: '/subRestaurant/home',
       notification: 0
     },
     {
       label: 'Estatistica',
       icon: <IoAnalyticsSharp size={18} />,
-      to: routsNameTabuleiro.statistic,
+      to: '/subRestaurant/statistic',
       notification: 0
     }
   ]
   const menu = [
     {
       label: 'Clientes',
-      to: routsNameTabuleiro.users,
-      icon: <FaUserFriends size={18} />,
+      to: '/subRestaurant/users',
+      icon: <AiOutlineUser size={18} />,
       notification: 0
     },
     {
-      label: 'Funcionários',
-      to: routsNameTabuleiro.employees,
-      icon: <RiUserSettingsFill size={18} />,
+      label: 'Produtos',
+      to: '/subRestaurant/products',
+      icon: <IoIosConstruct size={18} />,
       notification: 0
     },
     {
-      label: 'Restaurantes',
-      to: routsNameTabuleiro.restaurants,
-      icon: <IoRestaurantSharp size={18} />,
+      label: 'Categorias',
+      to: '/subRestaurant/categories',
+      icon: <MdCategory size={18} />,
       notification: 0
     },
     {
-      label: 'Fornecedores',
-      to: routsNameTabuleiro.providers,
-      icon: <MdVerifiedUser size={18} />,
+      label: 'Marcas',
+      to: '/subRestaurant/brands',
+      icon: <MdOutlineBookmarks size={18} />,
       notification: 0
     },
     {
-      label: 'Entregadores',
-      to: routsNameTabuleiro.deliveries,
-      icon: <MdDeliveryDining size={20} />,
+      label: 'Pedidos',
+      to: '/subRestaurant/requests',
+      icon: <IoDocumentsOutline size={18} />,
+      notification: 0
+    },
+    {
+      label: 'Compras',
+      to: '/subRestaurant/purchases',
+      icon: <AiOutlineShopping size={18} />,
+      notification: 0
+    },
+    {
+      label: 'Cupões',
+      to: '/subRestaurant/coupons',
+      icon: <RiCoupon3Line size={18} />,
       notification: 0
     }
   ]
   const notifications = [
     {
       label: 'Mensagem',
-      to: routsNameTabuleiro.messages,
+      to: '/subRestaurant/messages',
       icon: <AiOutlineMessage size={18} />,
       notification: 0
     },
     {
       label: 'FeedBacks',
       icon: <MdComment size={18} />,
-      to: routsNameTabuleiro.feedback,
+      to: '/subRestaurant/feedback',
       notification: 0
     }
   ]
@@ -202,4 +208,4 @@ const SideBarTabuleiro = () => {
   )
 }
 
-export default SideBarTabuleiro
+export default SideBarSubRestaurant

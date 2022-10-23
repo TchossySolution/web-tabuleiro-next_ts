@@ -1,4 +1,4 @@
-import RootRestaurantLayout from '../../Layout/RootRestaurantLayout'
+import RootSubRestaurantLayout from '../../Layout/RootSubRestaurantLayout'
 
 function subRestaurant() {
   return (
@@ -8,6 +8,6 @@ function subRestaurant() {
   )
 }
 
-subRestaurant.layout = RootRestaurantLayout
+subRestaurant.layout = RootSubRestaurantLayout
 
 export default subRestaurant
