@@ -25,15 +25,27 @@ export const HeaderContainer = styled.menu`
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    .containerOptions {
+      padding-right: 1.6rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .circuleContainerIcons {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.4rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: none;
+      }
+    }
   }
-  .containerSwitsh {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .containerSwitsh.switch {
-    text-align: center;
-  }
+
   .containerInfUser {
     display: flex;
     flex-direction: row;
@@ -52,7 +64,7 @@ export const HeaderContainer = styled.menu`
       align-items: center;
       justify-content: center;
 
-      background: #ddd;
+      background: none;
     }
 
     .optionContainer {

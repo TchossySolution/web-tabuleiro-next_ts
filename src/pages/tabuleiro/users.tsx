@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import swal from 'sweetalert'
 // import HeaderPageName from '../../components/HeaderPageName'
+
 import {
   UsersContainerStyle,
   AddUserContainer,
@@ -18,16 +20,14 @@ import { RiGenderlessLine } from 'react-icons/ri'
 import { ImListNumbered } from 'react-icons/im'
 import { FaRegUser } from 'react-icons/fa'
 import { BiPhoneCall, BiLocationPlus } from 'react-icons/bi'
+import { BiSearchAlt } from 'react-icons/bi'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { FaFilter, FaSortAmountUp } from 'react-icons/fa'
 
-import useImage from '../../assets/logo.png'
-import swal from 'sweetalert'
 import RootTabuleiroLayout from '../../Layout/RootTabuleiroLayout'
 import ModalEditeUse from '../../components/_tabuleiro/ModalEditeUse'
 import ModalCreateUse from '../../components/_tabuleiro/ModalCreateUse'
 import InputForm from '../../components/InputForm'
-import { BiSearchAlt } from 'react-icons/bi'
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import { FaFilter, FaSortAmountUp } from 'react-icons/fa'
 
 function Users() {
   const [search, setSearch] = useState<string>('')

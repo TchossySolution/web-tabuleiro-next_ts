@@ -1,15 +1,16 @@
 import styled from 'styled-components'
 
 export const HomeTotalsContainer = styled.menu`
+  flex: 1;
   display: flex;
-  padding: 18px;
-  margin: 18px;
+
+  padding: 1rem;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   border-radius: 10px;
   border-left: 6px solid ${props => props.color};
-  background-color: ${props => props.theme.colors.header};
+  background-color: ${props => props.theme.colors['base-background-dark']};
   transition: ease 0.3s;
 
   :hover {
@@ -36,18 +37,18 @@ export const HomeTotalsContainer = styled.menu`
     margin: 8px 0;
     align-items: center;
     justify-content: center;
-    background-color: ${props => props.theme.colors.secundary};
+    background-color: ${props => props.theme.colors['brand-secundary']};
     border-radius: 100%;
   }
 
   .nameTotal {
-    color: ${props => props.theme.colors.normalTxt};
+    color: ${props => props.theme.colors['base-text']};
     margin: 4px 0;
     font-weight: 300;
   }
 
   .numberTotal {
-    color: ${props => props.theme.colors.title};
+    color: ${props => props.theme.colors['base-text']};
     margin: 4px 0;
     font-size: 2rem;
   }
@@ -58,7 +59,7 @@ export const HomeTotalsContainer = styled.menu`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: ${props => props.theme.colors.normalTxt};
+    color: ${props => props.theme.colors['base-text']};
   }
   .percent span {
     margin-right: 4px;

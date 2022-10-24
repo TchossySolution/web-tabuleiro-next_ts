@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import { LayoutProps } from '../@types/pageWithLayoutsTypes'
 import HeaderTabuleiro from '../components/_tabuleiro/Header'

@@ -172,20 +172,19 @@ const SideBarTabuleiro = () => {
     <SideBarContainer style={slideIsOpen ? {} : { width: 'auto' }}>
       <div
         className="containerMenu"
-        style={slideIsOpen ? {} : { left: 90, width: 40, height: 40 }}
+        style={slideIsOpen ? {} : { left: 88, width: 36, height: 36 }}
+        onClick={ToggleModal}
       >
-        <div onClick={ToggleModal}>
-          {slideIsOpen ? (
-            <IoIosArrowBack className="iconHeader" size={24} />
-          ) : (
-            <IoIosArrowForward className="iconHeader" size={24} />
-          )}
-        </div>
+        {slideIsOpen ? (
+          <IoIosArrowBack className="iconHeader" size={24} />
+        ) : (
+          <IoIosArrowForward className="iconHeader" size={24} />
+        )}
       </div>
 
       <SLogo>
         <img
-          style={slideIsOpen ? {} : { width: '4.2rem' }}
+          style={slideIsOpen ? {} : { width: '3.6rem' }}
           src="/logoText.png"
           alt=""
         />

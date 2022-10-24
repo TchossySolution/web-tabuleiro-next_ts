@@ -6,9 +6,11 @@ export const Container = styled.div`
   flex-direction: column;
 
   .Totals {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 2rem;
   }
 
   .topBodyDashboard {
@@ -17,18 +19,6 @@ export const Container = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-
-  .graphicConteiner {
-    width: 100%;
-    margin: 16px 0;
-    display: flex;
-  }
-
-  @media only screen and (max-width: 1082px) {
-    .graphicConteiner {
-      flex-direction: column;
-    }
   }
 `
 export const Title = styled.h1`
