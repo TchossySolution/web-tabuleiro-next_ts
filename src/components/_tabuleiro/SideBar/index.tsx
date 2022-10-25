@@ -27,9 +27,12 @@ import {
 import { routsNameTabuleiro } from '../../../data/routsName'
 import { FaUserFriends } from 'react-icons/fa'
 import { RiUserSettingsFill } from 'react-icons/ri'
+import { useTranslation } from 'react-i18next'
 
 const SideBarTabuleiro = () => {
   const [slideIsOpen, setSlideIsOpen] = useState<boolean>(true)
+
+  const { t } = useTranslation()
 
   function ToggleModal() {
     setSlideIsOpen(!slideIsOpen)
@@ -37,13 +40,13 @@ const SideBarTabuleiro = () => {
 
   const dash = [
     {
-      label: 'Dashboard',
+      label: `${t(`slide.dash.dashboard`) as string}`,
       icon: <MdOutlineDashboard size={18} />,
       to: routsNameTabuleiro.home,
       notification: 0
     },
     {
-      label: 'Estatistica',
+      label: `${t(`slide.dash.statistic`) as string}`,
       icon: <IoAnalyticsSharp size={18} />,
       to: routsNameTabuleiro.statistic,
       notification: 0
@@ -51,31 +54,31 @@ const SideBarTabuleiro = () => {
   ]
   const menu = [
     {
-      label: 'Clientes',
+      label: `${t(`slide.menu.users`) as string}`,
       to: routsNameTabuleiro.users,
       icon: <FaUserFriends size={18} />,
       notification: 0
     },
     {
-      label: 'Funcionários',
+      label: `${t(`slide.menu.employees`) as string}`,
       to: routsNameTabuleiro.employees,
       icon: <RiUserSettingsFill size={18} />,
       notification: 0
     },
     {
-      label: 'Restaurantes',
+      label: `${t(`slide.menu.restaurants`) as string}`,
       to: routsNameTabuleiro.restaurants,
       icon: <IoRestaurantSharp size={18} />,
       notification: 0
     },
     {
-      label: 'Fornecedores',
+      label: `${t(`slide.menu.providers`) as string}`,
       to: routsNameTabuleiro.providers,
       icon: <MdVerifiedUser size={18} />,
       notification: 0
     },
     {
-      label: 'Entregadores',
+      label: `${t(`slide.menu.deliveries`) as string}`,
       to: routsNameTabuleiro.deliveries,
       icon: <MdDeliveryDining size={20} />,
       notification: 0
@@ -83,7 +86,7 @@ const SideBarTabuleiro = () => {
   ]
   const notifications = [
     {
-      label: 'Mensagem',
+      label: `${t(`slide.notifications.messages`) as string}`,
       to: routsNameTabuleiro.messages,
       icon: <AiOutlineMessage size={18} />,
       notification: 0
@@ -161,12 +164,12 @@ const SideBarTabuleiro = () => {
     </SLink>
   ))
 
-  const mapSecondaryArray = secondaryArray.map((item, index) => (
-    <SLink href={item.to} key={index}>
-      <SIcon>{item.icon}</SIcon>
-      {slideIsOpen ? <SLinkLabel> {item.label} </SLinkLabel> : <></>}
-    </SLink>
-  ))
+  // const mapSecondaryArray = secondaryArray.map((item, index) => (
+  //   <SLink href={item.to} key={index}>
+  //     <SIcon>{item.icon}</SIcon>
+  //     {slideIsOpen ? <SLinkLabel> {item.label} </SLinkLabel> : <></>}
+  //   </SLink>
+  // ))
 
   return (
     <SideBarContainer style={slideIsOpen ? {} : { width: 'auto' }}>
@@ -191,21 +194,21 @@ const SideBarTabuleiro = () => {
       </SLogo>
 
       <SLinkContainer>
-        <h5>Dashboard</h5>
+        <h5>{`${t(`slide.dash.dashboard`) as string}`}</h5>
         {mapLinks}
       </SLinkContainer>
 
       <SLinkContainer>
-        <h5>Menu</h5>
+        <h5>{`${t(`slide.menu.menu`) as string}`}</h5>
         {mapMenu}
       </SLinkContainer>
 
       <SLinkContainer>
-        <h5>Notificações</h5>
+        <h5>{`${t(`slide.notifications.notifications`) as string}`}</h5>
         {mapNotifications}
       </SLinkContainer>
 
-      <SLinkContainer>{mapSecondaryArray}</SLinkContainer>
+      {/* <SLinkContainer>{mapSecondaryArray}</SLinkContainer> */}
     </SideBarContainer>
   )
 }

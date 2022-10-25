@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
-import { HeaderContainer } from './styles'
 
+import { useTranslation } from 'react-i18next'
 import { ToastContainer, toast } from 'react-toastify'
-
 import 'react-toastify/dist/ReactToastify.css'
 
 import Avatar from '@mui/material/Avatar'
@@ -13,14 +12,20 @@ import Menu from '@mui/material/Menu'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Badge from '@mui/material/Badge'
+import { Divider, ListItemIcon } from '@mui/material'
 
 import { BsChatText } from 'react-icons/bs'
 import { FiLogOut } from 'react-icons/fi'
 import { IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5'
 import { RiFullscreenLine } from 'react-icons/ri'
-import { Divider, ListItemIcon } from '@mui/material'
-import InputForm from '../../InputForm'
 import { BiSearchAlt } from 'react-icons/bi'
+
+import InputForm from '../../InputForm'
+import { HeaderContainer } from './styles'
+
+import '../../../i18n/index'
+import i18n from '../../../i18n/index'
+import { ILanguage } from '../../../interfaces/ILang'
 
 interface ISettings {
   name: string
@@ -40,7 +45,7 @@ function HeaderTabuleiro() {
   const [lang, setLang] = useState({
     name: 'Português',
     langImage: '/lang/portugal.png',
-    langSelected: 'pt-br'
+    langSelected: 'pt'
   })
   const [anchorElLang, setAnchorElLang] = React.useState<null | HTMLElement>(
     null
@@ -49,6 +54,7 @@ function HeaderTabuleiro() {
     null
   )
 
+  const { t } = useTranslation()
   const user = {
     first_name: 'Rafael',
     last_name: 'Pilartes',
@@ -57,7 +63,7 @@ function HeaderTabuleiro() {
   }
 
   const successChangeLang = (langSelected: ILang) =>
-    toast.success(`O idioma foi mudado para ${langSelected.name}`, {
+    toast.success(`${t('header') as string} ${langSelected.name}`, {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
@@ -70,6 +76,7 @@ function HeaderTabuleiro() {
 
   function handleChangeLang(langSelected: ILang) {
     setLang(langSelected)
+    i18n.changeLanguage(langSelected.langSelected)
     setAnchorElUser(null)
     successChangeLang(langSelected)
   }
@@ -135,14 +142,14 @@ function HeaderTabuleiro() {
         <div className="containerRigth">
           <div className="containerOptions">
             <button className="circuleContainerIcons">
-              <Tooltip title="Pesquisar">
+              <Tooltip title={t('header.search') as string}>
                 <BiSearchAlt color="#fff" size={'1.5rem'} />
               </Tooltip>
             </button>
 
             <div className="">
               <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Linguagem">
+                <Tooltip title={t('header.language') as string}>
                   <IconButton onClick={handleOpenLangMenu} size="small">
                     <Avatar
                       sx={{ width: 38, height: 38 }}
@@ -163,7 +170,7 @@ function HeaderTabuleiro() {
                     handleChangeLang({
                       name: 'Português',
                       langImage: '/lang/portugal.png',
-                      langSelected: 'pt-br'
+                      langSelected: 'pt'
                     })
                   }
                 >
@@ -172,9 +179,9 @@ function HeaderTabuleiro() {
                 <MenuItem
                   onClick={() =>
                     handleChangeLang({
-                      name: 'Francês',
+                      name: 'Français',
                       langImage: '/lang/france.png',
-                      langSelected: 'fr-se'
+                      langSelected: 'fr'
                     })
                   }
                 >
@@ -185,7 +192,7 @@ function HeaderTabuleiro() {
                     handleChangeLang({
                       name: 'English',
                       langImage: '/lang/united-states.png',
-                      langSelected: 'en-us'
+                      langSelected: 'en'
                     })
                   }
                 >
@@ -196,7 +203,7 @@ function HeaderTabuleiro() {
           </div>
 
           <div className="containerInfUser">
-            <Tooltip title="Tela inteira">
+            <Tooltip title={t('header.fullScreen') as string}>
               <button
                 onClick={toggleFullScreen}
                 className="circuleContainerIcons"
@@ -206,7 +213,7 @@ function HeaderTabuleiro() {
             </Tooltip>
 
             <button className="circuleContainerIcons">
-              <Tooltip title="Mensagens">
+              <Tooltip title={t('header.message') as string}>
                 <Badge badgeContent={2} color="error">
                   <BsChatText color={'#fff'} size={'1.3rem'} />
                 </Badge>
@@ -214,7 +221,7 @@ function HeaderTabuleiro() {
             </button>
 
             <button className="circuleContainerIcons">
-              <Tooltip title="Notificações">
+              <Tooltip title={t('header.notifications') as string}>
                 <Badge badgeContent={3} color="error">
                   <IoNotificationsOutline color={'#fff'} size={'1.5rem'} />
                 </Badge>
@@ -223,7 +230,7 @@ function HeaderTabuleiro() {
 
             <div className="optionContainer">
               <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Account settings">
+                <Tooltip title={t('header.settings') as string}>
                   <IconButton
                     onClick={handleOpenUserMenu}
                     size="small"

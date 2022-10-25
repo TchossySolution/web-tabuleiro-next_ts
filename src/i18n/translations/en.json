@@ -1,0 +1,43 @@
+{
+  "translation": {
+    "header": {
+      "search": "Search",
+      "language": "Language",
+      "fullScreen": "Full screen",
+      "message": "Messages",
+      "notifications": "Notifications",
+      "settings": "Account configurations",
+      "changeLang": "Changed the language to"
+    },
+    "slide": {
+      "dash": {
+        "dashboard": "Signal",
+        "statistic": "Statistic"
+      },
+
+      "menu": {
+        "menu": "Menu",
+        "users": "Customers",
+        "employees": "Employees",
+        "restaurants": "restaurants",
+        "providers": "Providers",
+        "deliveries": "Messengers"
+      },
+
+      "notifications": {
+        "notifications": "Notifications",
+        "messages": "Message"
+      }
+    },
+    "_tabuleiro": {
+      "users": "Clientes",
+      "employees": "Funcionários",
+      "restaurants": "Restaurantes",
+      "providers": "Fornecedores",
+      "deliveries": "Entregadores"
+    },
+    "_restaurant": {},
+    "_subRestaurant": {},
+    "_furnisher": {}
+  }
+}

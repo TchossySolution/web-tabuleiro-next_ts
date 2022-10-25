@@ -5,6 +5,8 @@ import { AppLayoutProps } from '../@types/pageWithLayoutsTypes'
 import { GlobalStyle } from '../styles/global'
 import { defaultTheme } from '../themes/default'
 
+import '../i18n/index'
+
 function MyApp({ Component, pageProps }: AppLayoutProps) {
   const Layout =
     Component.layout || ((children: ReactElement) => <>{children}</>)
